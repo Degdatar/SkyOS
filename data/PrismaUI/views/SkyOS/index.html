@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkyOS</title>
+  <link rel="stylesheet" href="style.css?v=20261026-splash-webp-1">
+  <link rel="stylesheet" href="mod-app.css?v=20261023-app-bridge-1">
+  <link rel="stylesheet" href="skyview-dwemer.css?v=20261024-module-color-palette-1">
+  <link rel="stylesheet" href="themes.css?v=20261016-preview-nav-2">
+  <link rel="stylesheet" href="dependencies.css?v=20261016-preview-nav-2">
+  <link rel="stylesheet" href="skyapps.css?v=20261016-preview-nav-2">
+  <link rel="stylesheet" href="../SkyMonitor/monitor.css?v=20261021-monitor-sort-fix-4">
+  <link rel="stylesheet" href="skycollection.css?v=20261021-owned-filters-1">
+  <link rel="stylesheet" href="app-branding.css?v=20261017-app-assets-1">
+  <link rel="stylesheet" href="interaction.css?v=20261016-preview-nav-2">
+</head>
+<body>
+  <div id="launch-splash" class="launch-splash" aria-hidden="true" hidden>
+    <img id="launch-splash-image" alt="SkyOS launch splash">
+  </div>
+  <main class="desktop">
+    <header class="topbar">
+      <div class="brand"><img class="brand-logo" src="skyos-logo.png" alt=""><div><strong>SKYOS</strong><small>Dwemer systems interface</small></div></div>
+      <div class="status"><span class="online"></span><span id="status">Systems online</span><span class="clock">SKYRIM · 4E 201</span></div>
+      <button class="close" aria-label="Close SkyOS" onclick="SkyOS.hide()">×</button>
+    </header>
+    <section class="workspace">
+      <nav class="rail" aria-label="Applications">
+        <button class="app active" data-app="home" aria-label="Home"><img class="rail-logo" src="skyos-logo.png" alt="SkyOS logo"><small>Home</small></button>
+        <button class="app" data-app="skyapps" aria-label="SkyApps"><img class="rail-logo" src="skyos-logo.png" alt="SkyApps logo"><small>SkyApps</small></button>
+        <button class="app" data-app="documents" aria-label="SkyDocuments"><img class="rail-logo" src="skydocuments-logo.png" alt="SkyDocuments logo"><small>SkyDocuments</small></button>
+        <button class="app" data-app="skyview" aria-label="SkyViewer"><img class="rail-logo" src="skyviewer-logo.png" alt="SkyViewer logo"><small>SkyViewer</small></button>
+        <button class="app" data-app="skysearch" aria-label="SkySearch" hidden><img class="rail-logo" src="../SkySearch/skysearch-logo.png" alt="SkySearch logo"><small>SkySearch</small></button>
+        <button class="app" data-app="skycounter" aria-label="SkyCounter UI" hidden><img class="rail-logo" src="../SkyCounterUI/skycounterui-logo.png" alt="SkyCounter UI logo"><small>SkyCounter UI</small></button>
+        <button class="app" data-app="skymonitor" aria-label="SkyMonitor" hidden><img class="rail-logo" src="../SkyMonitor/skymonitor-logo.png" alt="SkyMonitor logo"><small>SkyMonitor</small></button>
+        <button class="app" data-app="skyrewrite" aria-label="SkyRewrite" hidden><img class="rail-logo" src="../SkyRewrite/skyrewrite-logo.png" alt="SkyRewrite logo"><small>SkyRewrite</small></button>
+        <button class="app" data-app="skycollection" aria-label="SkyCollection" hidden><img class="rail-logo skycollection-rail-logo" src="../SkyCollection/skycollection-logo.png" alt="SkyCollection logo"><small>SkyCollection</small></button>
+        <button class="app" data-app="skymissions" aria-label="SkyMissions" hidden><img class="rail-logo" src="../SkyMissions/skymissions-logo.png" alt="SkyMissions logo"><small>SkyMissions</small></button>
+        <button class="app" data-app="skyachievements" aria-label="SkyAchievements" hidden><img class="rail-logo" src="../SkyAchievements/skyachievements-logo.png" alt="SkyAchievements logo"><small>SkyAchievements</small></button>
+        <div class="rail-spacer"></div><button class="app" data-app="settings" aria-label="Settings"><img class="rail-logo" src="skyos-logo.png" alt="SkyOS logo"><small>Settings</small></button>
+      </nav>
+      <section class="content">
+        <div id="home" class="page">
+          <section class="home-hero">
+            <img class="home-banner" src="skyos-header.jpg" alt="Dwemer SkyOS control chamber">
+            <div class="home-hero-shade"></div>
+            <div class="home-hero-copy"><img class="home-hero-logo" src="skyos-logo.png" alt="SkyOS logo"><div><p class="eyebrow">DWEMER SYSTEM INTERFACE · BUILD 001</p><h1>Welcome to SkyOS<br><em>Skyrim, at your command.</em></h1><p>Your in-world gateway to tools, guides, and experiences built for Skyrim.</p><div class="home-hero-actions"><button class="primary" onclick="SkyOS.openApp('skyapps')">Explore SkyApps <span>→</span></button><button class="secondary" onclick="SkyOS.openApp('documents')">Open SkyDocuments</button></div></div></div>
+            <div class="home-hero-stamp"><span>DWEMER<br>SKYOS ONLINE</span><i>✦</i><small>4E · 201</small></div>
+          </section>
+          <div class="home-section-heading"><div><p class="eyebrow">QUICK ACCESS</p><h2>Your SkyOS systems</h2></div><span>Built for your Skyrim setup</span></div>
+          <div class="app-grid">
+            <button class="tile" onclick="SkyOS.openApp('skyapps')"><img class="tile-art" src="skyos-logo.png" alt=""><strong>SkyApps</strong><small>Open installed SkyOS apps</small></button>
+            <button class="tile" onclick="SkyOS.openApp('documents')"><img class="tile-art" src="skydocuments-logo.png" alt=""><strong>SkyDocuments</strong><small>Mod guides and pages</small></button>
+            <button class="tile" onclick="SkyOS.openApp('skyview')"><img class="tile-art" src="skyviewer-logo.png" alt=""><strong>SkyViewer</strong><small>PrismaUI MCM settings for supported mods</small></button>
+            <button class="tile" id="skynet-home-tile" onclick="SkyOS.launchSkyNet()"><img class="tile-art" src="../SkyNet/skynet-logo.png" alt=""><strong>SkyNet</strong><small id="skynet-home-status">Checking SkyNet installation…</small></button>
+            <button class="tile" id="skysearch-home-tile" onclick="SkyOS.openApp('skysearch')" hidden><img class="tile-art" src="../SkySearch/skysearch-logo.png" alt=""><strong>SkySearch</strong><small id="skysearch-home-status">Search Skyrim records by category</small></button>
+            <button class="tile" id="skymonitor-home-tile" onclick="SkyOS.openApp('skymonitor')" hidden><img class="tile-art" src="../SkyMonitor/skymonitor-logo.png" alt=""><strong>SkyMonitor</strong><small id="skymonitor-home-status">Live Skyrim performance</small></button>
+            <button class="tile" id="skyrewrite-home-tile" onclick="SkyOS.openApp('skyrewrite')" hidden><img class="tile-art" src="../SkyRewrite/skyrewrite-logo.png" alt=""><strong>SkyRewrite</strong><small id="skyrewrite-home-status">Persistent world history and simulation</small></button>
+            <button class="tile" id="skycounter-home-tile" onclick="SkyOS.openApp('skycounter')" hidden><img class="tile-art" src="../SkyCounterUI/skycounterui-logo.png" alt=""><strong>SkyCounter UI</strong><small id="skycounter-home-status">Recent item discoveries</small></button>
+            <button class="tile" id="skycollection-home-tile" onclick="SkyOS.openApp('skycollection')" hidden><img class="tile-art skycollection-tile-art" src="../SkyCollection/skycollection-logo.png" alt=""><strong>SkyCollection</strong><small id="skycollection-home-status">Your discovered item catalog</small></button>
+            <button class="tile" id="skymissions-home-tile" onclick="SkyOS.openApp('skymissions')" hidden><img class="tile-art" src="../SkyMissions/skymissions-logo.png" alt=""><strong>SkyMissions</strong><small id="skymissions-home-status">Missions, SkyStore, and character dashboard</small></button>
+            <button class="tile" id="skyachievements-home-tile" onclick="SkyOS.openApp('skyachievements')" hidden><img class="tile-art" src="../SkyAchievements/skyachievements-logo.png" alt=""><strong>SkyAchievements</strong><small id="skyachievements-home-status">Your character record and discoveries</small></button>
+          </div>
+        </div>
+        <div id="skyapps" class="page hidden">
+          <div class="page-heading brand-heading"><img class="page-banner" loading="lazy" decoding="async" src="skyos-header.jpg" alt=""><div class="page-title"><img class="page-logo" src="skyos-logo.png" alt=""><div><p class="eyebrow">DWEMER APPLICATION ARRAY</p><h1>SkyApps</h1><p class="subheading">Shortcuts to SkyOS apps and mod menus.</p></div></div></div>
+          <label class="skyapps-search"><span aria-hidden="true">⌕</span><input id="skyapps-search-input" type="search" autocomplete="off" placeholder="Search installed apps and mod menus…" aria-label="Search SkyApps"><kbd>FILTER</kbd></label>
+          <div id="skyapps-grid" class="app-grid"></div>
+        </div>
+        <div id="skyrewrite" class="page hidden">
+          <iframe id="skyrewrite-dashboard-frame" class="embedded-app-frame" title="SkyRewrite dashboard" src="../SkyRewrite/index.html?v=20261021-dashboard-2" loading="eager"></iframe>
+        </div>
+        <div id="skycounter" class="page hidden skycounter-dashboard-page">
+          <iframe id="skycounter-module-frame" class="skycounter-dashboard-frame" title="SkyCounter UI dashboard" src="SkyCounter/dashboard.html?v=20261021-counter-dashboard-1" loading="eager"></iframe>
+        </div>
+        <div id="skycollection" class="page hidden">
+          <div class="page-heading brand-heading skycollection-hero"><img class="skycollection-banner-art" src="../SkyCollection/skycollection-banner.jpg" alt=""><div class="skycollection-hero-mark"><img src="../SkyCollection/skycollection-logo.png" alt="SkyCollection"></div><div class="skycollection-hero-copy"><p class="eyebrow">ITEM INVENTORY &amp; COLLECTION LOG</p><h1>SkyCollection</h1><p class="subheading">A save-specific record of the things you have found across Skyrim.</p></div><span id="skycollection-count" class="skycollection-count">0 items discovered</span></div>
+          <section class="skycollection-panel">
+            <div class="skycollection-layout">
+              <aside class="skycollection-sidebar" aria-label="Collection categories">
+                <p class="eyebrow">COLLECTION</p>
+                <nav id="skycollection-filters" class="skycollection-filters" aria-label="Item category" role="group"></nav>
+              </aside>
+              <div class="skycollection-workspace">
+                <nav class="skycollection-controls" aria-label="Search and filter item collection">
+                  <label class="skycollection-search"><span aria-hidden="true">⌕</span><input id="skycollection-search" type="search" placeholder="Search name, FormID, or plugin" autocomplete="off"></label>
+                  <div class="skycollection-filter-pickers">
+                    <div class="skycollection-picker skycollection-rarity-filter-wrap" data-skycollection-picker="collection-rarity">
+                      <label class="skycollection-picker-label">Rarity / recency</label>
+                      <button type="button" class="skycollection-picker-trigger" aria-haspopup="listbox" aria-expanded="false"><span>All rarities</span><i aria-hidden="true">⌄</i></button>
+                      <div class="skycollection-picker-popover" hidden><label class="skycollection-picker-search"><span aria-hidden="true">⌕</span><input type="search" autocomplete="off" placeholder="Search rarity…" aria-label="Search collection rarity"></label><div class="skycollection-picker-options" role="listbox" aria-label="Rarity and recency"></div></div>
+                    </div>
+                    <div id="skycollection-plugin-filter-wrap" class="skycollection-picker skycollection-plugin-filter-wrap" data-skycollection-picker="collection-plugin">
+                      <label class="skycollection-picker-label">Plugin</label>
+                      <button type="button" class="skycollection-picker-trigger" aria-haspopup="listbox" aria-expanded="false"><span>All plugins</span><i aria-hidden="true">⌄</i></button>
+                      <div class="skycollection-picker-popover" hidden>
+                        <label class="skycollection-picker-search"><span aria-hidden="true">⌕</span><input type="search" autocomplete="off" placeholder="Search plugins…" aria-label="Search collection plugins"></label>
+                        <div class="skycollection-picker-options" role="listbox" aria-label="Collection plugins"></div>
+                      </div>
+                    </div>
+                  </div>
+                </nav>
+                <p id="skycollection-status" class="skycollection-status">Each save keeps its own discovered-item catalog. Missing icons are rendered automatically, one at a time, while SkyCollection is open.</p>
+                <div id="skycollection-grid" class="skycollection-grid"><div class="empty">Waiting for discovered items…</div></div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div id="skyachievements" class="page hidden">
+          <iframe id="skyachievements-frame" class="embedded-app-frame" title="SkyAchievements" src="../SkyAchievements/index.html?v=20261024-achievements-page-11" loading="eager"></iframe>
+        </div>
+        <div id="skymissions" class="page hidden">
+          <iframe id="skymissions-frame" class="embedded-app-frame" title="SkyMissions" src="../SkyMissions/index.html?v=20261024-skymissions-6" loading="eager"></iframe>
+        </div>
+        <div id="skyview" class="page hidden">
+          <div class="page-heading brand-heading"><img class="page-banner" loading="lazy" decoding="async" src="skyos-header.jpg" alt=""><div class="page-title"><img class="page-logo" src="skyviewer-logo.png" alt=""><div><p class="eyebrow">SKYOS APP CENTER</p><h1>SkyViewer</h1><p class="subheading">PrismaUI MCM-style settings menu for supported mods</p></div></div></div>
+          <div class="module-layout"><aside class="module-sidebar"><p class="eyebrow">INSTALLED MODS</p><label class="app-list-search"><span aria-hidden="true">⌕</span><input id="module-app-search" type="search" autocomplete="off" placeholder="Search apps…" aria-label="Search SkyViewer apps"></label><nav id="module-tabs" class="module-tabs" aria-label="Mod settings tabs"></nav></aside><section id="module-panel" class="module-panel"><div class="empty">Choose a mod to view its settings.</div></section></div>
+        </div>
+        <div id="documents" class="page hidden">
+          <div class="page-heading brand-heading"><img class="page-banner" loading="lazy" decoding="async" src="skydocuments-header.jpg" alt=""><div class="page-title"><img class="page-logo" src="skydocuments-logo.png" alt=""><div><p class="eyebrow">SKYOS LIBRARY</p><h1>SkyDocuments</h1><p class="subheading">Guides and web pages shipped with SkyOS-ready mods.</p></div></div><button id="refresh-documents" class="secondary" type="button">↻ Refresh</button></div>
+          <div class="document-layout"><aside class="document-sidebar"><p class="eyebrow">MODS WITH DOCUMENTS</p><label class="app-list-search"><span aria-hidden="true">⌕</span><input id="document-app-search" type="search" autocomplete="off" placeholder="Search apps…" aria-label="Search SkyDocuments apps"></label><nav id="document-mod-list" class="document-mod-list"></nav></aside><section id="document-browser" class="document-browser"><div class="empty">Choose a mod to browse its documents.</div></section></div>
+        </div>
+        <div id="skysearch" class="page hidden">
+          <div class="page-heading brand-heading search-heading"><img class="page-banner" loading="lazy" decoding="async" src="../SkySearch/skysearch-header.png" alt=""><div class="page-title"><img class="page-logo" src="../SkySearch/skysearch-logo.png" alt=""><div><p class="eyebrow">SKYRIM INDEX · ALT + SPACE</p><h1>SkySearch</h1><p class="subheading">Search Skyrim records and FormIDs by category.</p></div></div></div>
+          <form id="search-form" class="search-form"><span aria-hidden="true">⌕</span><input id="search-query" type="search" autocomplete="off" placeholder="Search Skyrim records or FormIDs" aria-label="Search Skyrim"><button class="primary" type="submit">Search</button></form>
+          <div class="search-filter-heading"><strong>Search categories</strong><span><button type="button" class="secondary" id="search-select-all">All</button><button type="button" class="secondary" id="search-clear-all">Clear</button></span></div>
+          <div class="search-filters" id="search-filters"></div>
+          <p class="search-hint">Choose one or more record types to narrow the search. No files, textures, scripts, or logs are scanned.</p>
+          <div id="search-results" class="search-results"><div class="empty">Enter a name or FormID to search the Skyrim index.</div></div>
+        </div>
+        <div id="skymonitor" class="page hidden">
+          <div class="page-heading brand-heading monitor-heading"><img class="page-banner" loading="lazy" decoding="async" src="../SkyMonitor/skymonitor-banner.png" alt=""><div class="page-title"><img class="page-logo" src="../SkyMonitor/skymonitor-logo.png" alt=""><div><p class="eyebrow">SKYOS PERFORMANCE ARRAY</p><h1>SkyMonitor</h1><p class="subheading">Live Skyrim process and load-order telemetry.</p></div></div><span class="monitor-live"><i></i> LIVE</span></div>
+          <nav class="monitor-tabs" role="tablist" aria-label="SkyMonitor sections"><button type="button" class="active" data-monitor-tab="overview" aria-pressed="true">Overview</button><button type="button" data-monitor-tab="profiler" aria-pressed="false">SkyProfiler</button><button type="button" data-monitor-tab="plugins" aria-pressed="false">Plugins</button></nav>
+          <section id="monitor-overview" class="monitor-tab-panel" aria-label="Live system metrics">
+          <section class="monitor-summary" aria-label="Live system metrics">
+            <article class="monitor-card"><small>SKYRIM CPU</small><strong id="monitor-cpu">—</strong><span>Process utilization</span></article>
+            <article class="monitor-card"><small>SKYRIM RAM</small><strong id="monitor-ram">—</strong><span>Working set</span></article>
+            <article class="monitor-card"><small>GPU</small><strong id="monitor-gpu">—</strong><span>Skyrim process engines</span></article>
+            <article class="monitor-card"><small>VRAM</small><strong id="monitor-vram">—</strong><span>Skyrim dedicated memory</span></article>
+            <article class="monitor-card"><small>FPS</small><strong id="monitor-fps">—</strong><span>Game frame rate</span></article>
+            <article class="monitor-card"><small>FRAME TIME</small><strong id="monitor-frame-time">—</strong><span>Average time per rendered frame</span></article>
+            <article class="monitor-card"><small>MAIN THREAD</small><strong id="monitor-main-cpu">—</strong><span>CPU use on Skyrim's main thread</span></article>
+            <article class="monitor-card"><small>WORKER THREADS</small><strong id="monitor-worker-cpu">—</strong><span>Combined CPU use across worker threads</span></article>
+            <article class="monitor-card"><small>PRIVATE MEMORY</small><strong id="monitor-private-ram">—</strong><span>Memory committed by Skyrim</span></article>
+            <article class="monitor-card"><small>MEMORY GROWTH</small><strong id="monitor-memory-growth">—</strong><span>Private memory change per second</span></article>
+            <article class="monitor-card"><small>SYSTEM RAM</small><strong id="monitor-system-ram">—</strong><span id="monitor-thread-count">Threads: —</span></article>
+            <article class="monitor-card"><small>PLUGINS</small><strong id="monitor-plugin-count">—</strong><span>Loaded game plugins</span></article>
+              <article class="monitor-card"><small>ATTACHED SCRIPTS</small><strong id="monitor-script-count">—</strong><span>Papyrus script instances attached to forms</span></article>
+          </section>
+          </section>
+          <section id="monitor-profiler" class="monitor-tab-panel monitor-panel monitor-profiler" hidden><header><div><p class="eyebrow">NATIVE CPU ATTRIBUTION</p><h2>SkyProfiler</h2></div><div class="profiler-actions"><button id="monitor-profile-start" type="button">Start deep profile</button><button id="monitor-profile-stop" type="button" disabled>Stop &amp; save run</button></div></header><p id="monitor-profile-status" class="monitor-note">Deep profiling samples Skyrim with Windows ETW. SkyOS will report if Windows has not granted the required profiling privilege. Module and stack shares are estimates, not exact CPU time.</p><div id="monitor-profile-comparison" class="monitor-profile-comparison hidden"></div><div id="monitor-module-list" class="monitor-plugin-list"><div class="empty">Start deep profile to collect native module samples.</div></div><div class="monitor-function-section"><h3>Hot functions and stack frames</h3><p>Groups samples by Skyrim, third-party modules, graphics drivers, and Windows runtime. Offset-only entries identify an address without a local symbol name.</p><div id="monitor-function-list" class="monitor-plugin-list"><div class="empty">Function samples are resolved when you stop a profile.</div></div></div><footer>Stopping a run automatically saves SkyMonitor.ini and retains the prior run for comparison.</footer></section>
+          <section id="monitor-plugins" class="monitor-tab-panel monitor-panel" hidden><header><div><p class="eyebrow">LOAD ORDER</p><h2>Loaded plugins</h2></div><label>Sort<select id="monitor-sort"><option value="load">Load order</option><option value="name">Alphabetical</option><option value="recent">Recently installed</option></select></label></header><p class="monitor-note">Skyrim's CPU, RAM, and GPU measurements apply to the whole process. ESP/ESM records share engine allocations, so Windows cannot report accurate per-plugin resource usage. SkyProfiler can estimate CPU samples by native DLL module; plugin file size is not RAM use. Recently installed sorting uses the plugin file's last-modified time.</p><div class="monitor-plugin-usage" aria-label="Current Skyrim process usage"><article><small>PROCESS CPU</small><strong id="monitor-plugin-cpu">—</strong></article><article><small>PROCESS RAM</small><strong id="monitor-plugin-ram">—</strong></article><article><small>PROCESS GPU</small><strong id="monitor-plugin-gpu">—</strong></article></div><div id="monitor-plugin-list" class="monitor-plugin-list"><div class="empty">Waiting for Skyrim telemetry…</div></div><footer>Plugin rows show load-order details. Resource figures above are shared process totals, not per-plugin values.</footer></section>
+        </div>
+        <div id="settings" class="page hidden">
+          <div class="page-heading"><div><p class="eyebrow">SKYOS CONFIGURATION</p><h1>Settings</h1><p class="subheading">Personalize the appearance of your SkyOS workspace.</p></div></div>
+          <div class="appearance-settings">
+            <section class="appearance-card dependency-card"><div><p class="eyebrow">APPLICATION DEPENDENCIES</p><h2>SkyNet compatibility</h2><p id="skynet-settings-status">Checking whether the SkyOS-compatible SkyNet build is available.</p><p class="dependency-note">SkyDocuments remains available without SkyNet using the built-in PDF and webpage reader.</p></div><span id="skynet-status-badge" class="dependency-badge checking">CHECKING</span></section>
+            <section class="appearance-card"><div><p class="eyebrow">DISPLAY CALIBRATION</p><h2>Interface theme</h2><p>Choose a visual style. The change is applied immediately and saved on this device.</p></div><label class="theme-select-label" for="theme-choice">Theme<select id="theme-choice"><option value="dark">Dark · Dwemer</option><option value="light">Light · Parchment</option><option value="cyberpunk">Cyberpunk · Neon</option><option value="vampire-neon">Vampire Neon</option><option value="deep-blue">Deep Blue · Neon</option></select></label></section>
+            <section class="appearance-card"><div><p class="eyebrow">TYPE CALIBRATION</p><h2>Interface font</h2><p>Choose a font for SkyOS. Your selection applies immediately and is saved on this device.</p></div><label class="theme-select-label" for="font-choice">Font<select id="font-choice"><option value="main">SkyOS Standard · Manrope</option><option value="neon">Neon Grid · Cyberpunk</option><option value="dwemer">Dwemer Serif</option><option value="terminal">Terminal Monospace</option><option value="aspire">Aspire Demibold</option><option value="timeburner">Timeburner</option><option value="balingkang">Balingkang</option></select></label></section>
+            <section class="appearance-card color-card"><div><p class="eyebrow">TEXT CALIBRATION</p><h2>Interface text color</h2><p>Choose a palette color for this theme or set a custom color. Changes update immediately.</p></div><div class="text-color-controls"><div id="text-color-palette" class="text-color-palette" aria-label="Text color palette"></div><label class="theme-select-label" for="text-color-choice">Custom color<input id="text-color-choice" type="color" value="#e9edf2"></label><button id="reset-text-color" class="secondary" type="button">Use theme default</button></div></section>
+          </div>
+        </div>
+        <div id="reader" class="page hidden">
+          <div class="reader-heading"><button class="secondary" onclick="SkyOS.openApp('documents')">← Library</button><div><p class="eyebrow" id="reader-mod">MOD DOCUMENT</p><h1 id="reader-title">Document</h1></div></div>
+          <article id="reader-content" class="reader-content"></article>
+        </div>
+        <div id="mod-app" class="page mod-app-page hidden">
+          <div class="reader-heading mod-app-heading"><button class="secondary" onclick="SkyOS.openApp('skyapps')">← SkyApps</button><div class="mod-app-heading-copy"><p class="eyebrow">MOD APP · INTERNAL WINDOW</p><h1 id="mod-app-title">Mod app</h1><p id="mod-app-description" class="subheading"></p></div><div id="mod-app-actions" class="mod-app-actions" aria-label="Mod app actions"></div></div>
+          <iframe id="mod-app-frame" class="mod-app-frame" title="Mod app" sandbox="allow-scripts allow-forms" referrerpolicy="no-referrer"></iframe>
+        </div>
+      </section>
+    </section>
+    <footer class="taskbar"><span class="task-active"><i>✦</i> SkyOS</span><span class="task-label">Developed By Degdatar</span><span class="shortcut"><span id="shortcut-key">F11</span> <small>open</small> · <span id="shortcut-close">ESC</span> <small>close</small></span></footer>
+  </main>
+  <script src="../SkyMonitor/monitor.js?v=20261022-plugin-sorting-1"></script>
+  <script src="app.js?v=20261026-splash-webp-1"></script>
+</body>
+</html>

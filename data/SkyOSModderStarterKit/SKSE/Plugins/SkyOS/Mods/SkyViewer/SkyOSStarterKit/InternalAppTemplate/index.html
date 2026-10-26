@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>My SkyOS App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div class="sigil" aria-hidden="true">✦</div>
+      <div>
+        <p class="eyebrow">YOUR MOD · YOUR INTERFACE</p>
+        <h1>My SkyOS App</h1>
+        <p class="intro">A self-contained app page. Replace this example with your own mod tools, guides, dashboards, or settings.</p>
+      </div>
+      <span class="status"><i></i> RUNNING IN SKYOS</span>
+    </header>
+
+    <section class="card welcome-card">
+      <div>
+        <p class="eyebrow">STARTER EXAMPLE</p>
+        <h2>Make this space yours.</h2>
+        <p>Edit <code>index.html</code> for structure, <code>style.css</code> for every visual detail, and <code>app.js</code> for interactions.</p>
+      </div>
+      <button id="action-button" class="action-button" type="button">Try the interaction <span>→</span></button>
+    </section>
+
+    <section class="dashboard" aria-label="Example cards">
+      <article class="card stat-card"><span class="card-icon teal">01</span><p class="eyebrow">YOUR FIRST PANEL</p><h2>Build freely</h2><p>Use your own layout, colors, typography, and local images or other files beside this page.</p></article>
+      <article class="card stat-card"><span class="card-icon gold">02</span><p class="eyebrow">YOUR SECOND PANEL</p><h2>Keep it simple</h2><p>This example uses plain web files. No framework or changes to SkyOS are needed.</p></article>
+      <article class="card stat-card stat-highlight"><span class="card-icon violet">✦</span><p class="eyebrow">INTERACTION CHECK</p><h2 id="interaction-state">Ready for your ideas</h2><p>Replace this text and behavior with the features your app needs.</p></article>
+    </section>
+
+    <footer><span>SKYOS INTERNAL APP TEMPLATE</span><span>Customize these files in your mod package</span></footer>
+  </main>
+  <script src="skyos-bridge.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

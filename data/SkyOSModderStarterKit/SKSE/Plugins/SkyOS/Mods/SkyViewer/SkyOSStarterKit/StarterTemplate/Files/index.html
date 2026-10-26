@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Mod SkyViewer Page</title>
+  <style>
+    body{margin:0;padding:20px;background:#11171b;color:#e9edf2;font:13px/1.6 'Segoe UI',sans-serif}.card{padding:18px;background:#192228;border:1px solid #34434a;border-radius:8px}h2{margin:0 0 4px;color:#f0c77a}p{margin:0 0 14px;color:#9ba8b1}label{display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid #ffffff14}label span{flex:1}input{accent-color:#dcad66}output{color:#70d2df;font-family:Consolas,monospace}
+  </style>
+</head>
+<body>
+  <section class="card"><h2>Your Mod Control Panel</h2><p>This page receives saved settings from SkyOS. Add your own controls and status readouts here.</p><label><span>Example feature enabled</span><input id="enabled" type="checkbox"></label><p>Saved state: <output id="state">Waiting for SkyOS…</output></p></section>
+  <script>
+    const enabled = document.getElementById('enabled');
+    const state = document.getElementById('state');
+    window.addEventListener('message', (event) => {
+      if (!event.data || event.data.type !== 'skyos:settings') return;
+      enabled.checked = event.data.settings?.enabled !== false;
+      state.textContent = JSON.stringify(event.data.settings || {});
+    });
+    enabled.addEventListener('change', () => {
+      parent.postMessage({ type: 'skyos:set-setting', id: 'enabled', value: enabled.checked }, '*');
+    });
+  </script>
+</body>
+</html>

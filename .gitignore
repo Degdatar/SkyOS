@@ -1,0 +1,29 @@
+# Generated build and packaging output
+/build/
+/build-*/
+/_CPack_Packages/
+/patchcheck-*/
+/patchgen-*/
+/tmp/
+/SkyOS/
+
+# Compiled binaries and local release archives
+*.dll
+*.exe
+*.obj
+*.o
+*.pdb
+*.ilk
+*.exp
+*.lib
+*.a
+*.so
+*.dylib
+*.7z
+*.zip
+*.log
+*.dmp
+*.cache
+
+# User-specific CMake configuration
+/CMakeUserPresets.json

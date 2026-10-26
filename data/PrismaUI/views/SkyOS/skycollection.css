@@ -1,0 +1,152 @@
+.skycollection-hero{align-items:center;justify-content:flex-start;gap:18px;padding:24px 26px;margin-bottom:18px;border:1px solid #37c8d955;border-radius:13px;background:radial-gradient(ellipse at 92% 35%,#1c697633,transparent 32%),linear-gradient(110deg,#12252c,#161b24 70%,#122029)}.skycollection-hero h1{margin-bottom:6px}.skycollection-hero-mark{width:60px;height:60px;flex:none;display:grid;place-items:center;border:1px solid #55d4d977;border-radius:16px;background:#10242bcc;color:#83edf0;font-size:31px;box-shadow:0 0 28px #24b7c222}.skycollection-count{margin-left:auto;padding:7px 11px;border:1px solid #43848b77;border-radius:999px;color:#a9e9e9;background:#112a31;font:10px "DM Mono",monospace;white-space:nowrap}.skycollection-panel{padding:18px;border:1px solid #303943;border-radius:12px;background:linear-gradient(145deg,#171c24,#151a21);box-shadow:0 10px 35px #0002}.skycollection-panel-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 14px}.skycollection-panel-heading .eyebrow{margin-bottom:6px}.skycollection-panel-heading h2{margin:0;font-size:20px}.skycollection-controls{display:grid;grid-template-columns:auto minmax(180px,1fr) minmax(160px,220px);align-items:center;gap:10px;padding:9px;border:1px solid #293641;border-radius:10px;background:linear-gradient(120deg,#101820,#141b24)}.skycollection-filters{display:flex;gap:4px;padding:3px;border:1px solid #ffffff0b;border-radius:8px;background:#0d131a}.skycollection-filters button{padding:8px 10px;border:1px solid transparent;border-radius:6px;background:transparent;color:#9aa7b3;font:600 10px Manrope,sans-serif;white-space:nowrap;cursor:pointer}.skycollection-filters button.active{border-color:#50cbd766;background:linear-gradient(135deg,#153a42,#19313a);color:#a1f0f0;box-shadow:inset 0 0 13px #42d5df12}.skycollection-search,.skycollection-plugin-filter{display:flex;align-items:center;gap:9px;min-width:0;padding:9px 11px;border:1px solid #344552;border-radius:7px;background:#0e151c;color:#79d7e1;font:11px Manrope,sans-serif}.skycollection-search:focus-within,.skycollection-plugin-filter:focus-within{border-color:#5dcdd7;box-shadow:0 0 0 2px #5dcdd722}.skycollection-search input,.skycollection-plugin-filter select{width:100%;min-width:0;border:0;outline:0;color:#e7eff2;background:transparent;font:11px Manrope,sans-serif}.skycollection-plugin-filter select option{background:#111820;color:#e7eff2}.skycollection-status{margin:11px 2px 13px;color:#83919f;font:9px "DM Mono",monospace;line-height:1.5}.skycollection-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:10px}.skycollection-item{position:relative;display:grid;grid-template-columns:68px minmax(0,1fr);align-items:center;gap:11px;min-width:0;min-height:98px;padding:11px 12px 22px;border:1px solid #2b4650;border-radius:10px;background:linear-gradient(135deg,#14222a,#151b23);transition:transform .16s,border-color .16s,background .16s}.skycollection-item-art{width:68px;height:68px;display:grid;place-items:center;position:relative;overflow:hidden;border:1px solid #39626c;border-radius:8px;background:radial-gradient(circle at 50% 37%,#27505a,#111920 75%);color:#75d8df;font-size:28px}.skycollection-item-art img{width:100%;height:100%;object-fit:contain}.skycollection-item-art small{position:absolute;bottom:4px;color:#708e98;font:7px "DM Mono",monospace;letter-spacing:.12em}.skycollection-item-copy{display:grid;gap:4px;min-width:0}.skycollection-item-copy strong{overflow:hidden;color:#e4edf0;font-size:11px;text-overflow:ellipsis;white-space:nowrap}.skycollection-item-copy span{color:#75d5df;font:9px "DM Mono",monospace}.skycollection-item-copy small{overflow:hidden;color:#8493a1;font-size:8px;text-overflow:ellipsis;white-space:nowrap}.skycollection-item-copy .skycollection-formid{color:#617786;font-family:"DM Mono",monospace}.skycollection-found{position:absolute;right:11px;bottom:7px;color:#a3b2bd;font:8px "DM Mono",monospace}.skycollection-plugin-group{display:grid;gap:10px;padding:12px;border:1px solid #31434a;border-radius:10px;background:#111820}.skycollection-plugin-group>header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-bottom:9px;border-bottom:1px solid #ffffff12}.skycollection-plugin-group>header strong{overflow:hidden;color:#ecd092;font-size:11px;text-overflow:ellipsis;white-space:nowrap}.skycollection-plugin-group>header small{color:#8495a0;font:9px "DM Mono",monospace;white-space:nowrap}.skycollection-footnote{margin:13px 2px 0;color:#84919e;font:9px/1.6 "DM Mono",monospace}.skycounter-recent{display:grid;gap:9px}.skycounter-row{display:flex;align-items:center;gap:10px}.skycounter-row .skycollection-item{flex:1}.skycounter-amount{min-width:130px;color:#edc97b;font:10px "DM Mono",monospace;text-align:right}.@media(max-width:980px){.skycollection-controls{grid-template-columns:1fr}.skycollection-filters{overflow:auto}.skycollection-count{margin:0}.skycollection-hero{align-items:flex-start;flex-wrap:wrap}.skycollection-hero .skycollection-count{margin-left:78px}}@media(max-width:620px){.skycollection-panel{padding:12px}.skycollection-filters button{padding:7px 8px}.skycollection-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}.skycounter-row{align-items:stretch;flex-direction:column}.skycounter-amount{align-self:flex-end}}
+
+/* Collector-card catalog treatment, inspired by classic RPG inventory menus. */
+#skycollection .skycollection-hero{border-color:#82919d66;background:radial-gradient(ellipse at 90% 30%,#4f879322,transparent 38%),linear-gradient(110deg,#1b2730,#131920 68%,#202a32)}
+#skycollection .skycollection-hero-mark{border-color:#a8bac877;border-radius:8px;background:linear-gradient(145deg,#26343e,#11171d);color:#c3d4dc;box-shadow:inset 0 0 18px #a4bac21c,0 0 22px #42cfdb22}
+#skycollection .skycollection-count{border-color:#a5b9c166;border-radius:4px;background:#18232b;color:#d2e0e4;text-transform:uppercase;letter-spacing:.07em}
+#skycollection .skycollection-panel{padding:14px;border-color:#66768166;background:linear-gradient(145deg,#151b21,#10151b);box-shadow:inset 0 1px #ffffff0b,0 16px 40px #0003}
+.skycollection-layout{display:grid;grid-template-columns:190px minmax(0,1fr);align-items:start;gap:15px}
+.skycollection-sidebar{position:sticky;top:10px;padding:10px;border:1px solid #8796a055;border-radius:7px;background:linear-gradient(155deg,#252f37,#141b21 76%);box-shadow:inset 0 1px #ffffff18,0 8px 20px #0003}
+.skycollection-sidebar>.eyebrow{margin:3px 5px 10px;color:#d0a966;font-size:9px;letter-spacing:.19em}
+.skycollection-sidebar .skycollection-filters{display:grid;gap:7px;padding:0;border:0;background:transparent}
+.skycollection-sidebar .skycollection-filters button{display:grid;grid-template-columns:36px minmax(0,1fr);align-items:center;gap:9px;min-height:48px;padding:5px 10px;border:1px solid #a5b4be55;border-radius:5px;background:linear-gradient(115deg,#39444d,#20282f 72%,#303a42);box-shadow:inset 0 1px #ffffff20,0 2px 5px #0004;color:#d0d6da;text-align:left;text-transform:uppercase;letter-spacing:.045em;transition:transform .15s,border-color .15s,box-shadow .15s,background .15s}
+.skycollection-sidebar .skycollection-filters button.active{border-color:#73e4f4;background:linear-gradient(115deg,#234d59,#192c34 75%,#253941);box-shadow:inset 0 0 20px #44d6e233,0 0 12px #3ed5ed33;color:#a6f3fb}
+.skycollection-filter-glyph{display:grid;place-items:center;width:31px;height:31px;border:1px solid #b7c4cc55;border-radius:4px;background:#11181eb8;color:#ced8dc;font-size:19px;text-shadow:0 0 9px #88e5f080}
+.skycollection-filters button.active .skycollection-filter-glyph{border-color:#70e6f188;background:#12272ecc;color:#8ff4ff;text-shadow:0 0 12px #46e5ff}
+.skycollection-sidebar .skycollection-filters button>span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:10px}
+.skycollection-workspace{min-width:0}
+.skycollection-workspace .skycollection-controls{grid-template-columns:minmax(180px,1fr) minmax(150px,230px);padding:8px;border-color:#53636e88;border-radius:6px;background:linear-gradient(115deg,#1d272e,#151c22)}
+.skycollection-workspace .skycollection-search,.skycollection-workspace .skycollection-plugin-filter{border-color:#7a8b9655;border-radius:4px;background:#10171dcf}
+.skycollection-workspace .skycollection-status{margin:10px 2px 12px;color:#9ba8ae;font:9px/1.5 "DM Mono",monospace}
+.skycollection-workspace .skycollection-grid{grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:12px}
+#skycollection-grid .skycollection-collectible{grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr auto;align-items:stretch;gap:8px;min-height:252px;padding:9px 9px 10px;border:2px solid #87949c;border-radius:8px;background:linear-gradient(145deg,#313a41,#1a2026 45%,#293239);box-shadow:inset 0 1px #ffffff30,inset 0 -3px #090d10aa,0 4px 10px #0004;transition:transform .16s,border-color .16s,box-shadow .16s,filter .16s}
+#skycollection-grid .skycollection-collectible.is-unique{border-color:#b99558;box-shadow:inset 0 1px #fff2c52e,inset 0 -3px #090d10aa,0 4px 10px #0004}
+.skycollection-card-heading{display:flex;align-items:center;justify-content:space-between;gap:5px;min-width:0;min-height:25px;padding:0 2px}
+.skycollection-card-heading strong{overflow:hidden;color:#e7edf0;font-size:10px;font-weight:800;text-overflow:ellipsis;white-space:nowrap}
+.skycollection-card-heading>span{flex:none;padding:3px 4px;border:1px solid #d2ac6377;border-radius:3px;color:#f0ce82;font:7px "DM Mono",monospace;letter-spacing:.08em}
+#skycollection-grid .skycollection-collectible .skycollection-item-art{width:100%;height:145px;min-height:0;border:1px solid #82939c7a;border-radius:5px;background:radial-gradient(ellipse at 50% 42%,#4b5e67aa,#151b20 72%);color:#a9eaf0;font-size:34px}
+#skycollection-grid .skycollection-collectible .skycollection-item-art img{padding:16px;filter:drop-shadow(0 5px 7px #0009)}
+#skycollection-grid .skycollection-collectible .skycollection-item-art small{bottom:7px;padding:3px 5px;border-radius:3px;background:#0b1119b8;color:#98a9ad;font-size:7px}
+.skycollection-card-details{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:5px 8px;min-width:0;padding:1px 2px 0}
+.skycollection-card-category{overflow:hidden;color:#95e5ec;font:8px "DM Mono",monospace;text-overflow:ellipsis;white-space:nowrap;text-transform:uppercase;letter-spacing:.06em}
+.skycollection-card-details .skycollection-found{position:static;overflow:hidden;color:#d4dfe2;font:8px "DM Mono",monospace;text-align:right;text-overflow:ellipsis;white-space:nowrap}
+.skycollection-card-details small{overflow:hidden;color:#91a0a7;font-size:7px;text-overflow:ellipsis;white-space:nowrap}
+.skycollection-card-details .skycollection-formid{color:#71818a;font-family:"DM Mono",monospace;text-align:right}
+#skycollection-grid .skycollection-plugin-group{border-color:#75838b55;background:#141b21}
+#skycollection-grid .skycollection-plugin-group>header strong{color:#dfc28d}
+@media(max-width:980px){.skycollection-layout{grid-template-columns:155px minmax(0,1fr);gap:10px}.skycollection-sidebar{padding:7px}.skycollection-sidebar .skycollection-filters button{grid-template-columns:30px minmax(0,1fr);gap:6px;padding:5px}.skycollection-filter-glyph{width:27px;height:27px}.skycollection-workspace .skycollection-grid{grid-template-columns:repeat(auto-fill,minmax(145px,1fr))}}
+@media(max-width:700px){.skycollection-layout{grid-template-columns:minmax(0,1fr)}.skycollection-sidebar{position:static;padding:8px}.skycollection-sidebar .skycollection-filters{display:flex;overflow-x:auto;padding:1px 1px 4px}.skycollection-sidebar .skycollection-filters button{flex:0 0 130px;min-height:42px}.skycollection-workspace .skycollection-controls{grid-template-columns:minmax(0,1fr)}.skycollection-workspace .skycollection-grid{grid-template-columns:repeat(auto-fill,minmax(138px,1fr))}}
+
+/* SkyCollection customization and category tree. */
+[hidden]{display:none!important}
+.skycollection-rail-logo{object-fit:contain;filter:drop-shadow(0 0 5px #56c9e777)}
+.skycollection-tile-art{object-fit:contain;filter:drop-shadow(0 0 8px #54cce866)}
+#skycollection .skycollection-hero{position:relative;isolation:isolate;overflow:hidden;min-height:132px;background:linear-gradient(100deg,#111820eF,#151b22dc)}
+.skycollection-banner-art{position:absolute;z-index:-1;inset:0;width:100%;height:100%;object-fit:cover;opacity:.32;filter:saturate(.82)}
+.skycollection-hero-mark{overflow:hidden}
+.skycollection-hero-mark img{width:100%;height:100%;padding:5px;object-fit:contain}
+.skycollection-hero-copy{position:relative;z-index:1}
+.skycollection-hero>.skycollection-count{position:relative;z-index:1}
+.skycollection-sidebar{max-height:calc(100vh - 165px);overflow:auto;scrollbar-width:none;scrollbar-color:transparent transparent}
+.skycollection-sidebar::-webkit-scrollbar{display:none;width:0;height:0}
+.skycollection-sidebar .skycollection-filters{display:grid;gap:7px}
+.skycollection-filter-group{display:grid;gap:4px}
+.skycollection-filter-children{display:grid;gap:4px;padding-left:14px}
+.skycollection-sidebar .skycollection-filters button.is-child{grid-template-columns:28px minmax(0,1fr);min-height:38px;padding:4px 7px;background:linear-gradient(115deg,#2c373f,#1a2229);text-transform:none;letter-spacing:0}
+.skycollection-sidebar .skycollection-filters button.is-child .skycollection-filter-glyph{width:24px;height:24px;font-size:14px}
+.skycollection-sidebar .skycollection-filters button.is-child>span:last-child{font-size:9px}
+.skycollection-filter-pickers{align-items:end}
+.skycollection-rarity-filter-wrap{min-width:145px}
+#skycollection .skycollection-workspace .skycollection-controls{grid-template-columns:minmax(180px,1fr) minmax(300px,420px)}
+#skycollection .skycollection-filter-pickers{justify-content:flex-end;flex-wrap:wrap}
+#skycollection .skycollection-rarity-filter-wrap{width:clamp(145px,17vw,200px);flex:1}
+#skycollection .skycollection-plugin-filter-wrap{width:clamp(160px,19vw,220px);flex:1}
+#skycollection-grid .skycollection-collectible.rarity-common{border-color:#87949c;background:linear-gradient(145deg,#313a41,#1a2026 45%,#293239)}
+#skycollection-grid .skycollection-collectible.rarity-uncommon{border-color:#67bd79;background:linear-gradient(145deg,#25402f,#17241c 48%,#263a2d);box-shadow:inset 0 1px #d8ffe22c,inset 0 -2px #090d1088}
+#skycollection-grid .skycollection-collectible.rarity-rare{border-color:#69a9ee;background:linear-gradient(145deg,#243b56,#151f2d 48%,#26384d);box-shadow:inset 0 1px #d7ebff30,inset 0 -2px #090d1088}
+#skycollection-grid .skycollection-collectible.rarity-epic{border-color:#e6a04d;background:linear-gradient(145deg,#523720,#2a2018 48%,#47301d);box-shadow:inset 0 1px #ffe3c130,inset 0 -2px #090d1088}
+#skycollection-grid .skycollection-collectible.rarity-legendary{border-color:#e26b68;background:linear-gradient(145deg,#512a2d,#291a1d 48%,#472629);box-shadow:inset 0 1px #ffd5d530,inset 0 -2px #090d1088}
+#skycollection-grid .skycollection-collectible.rarity-uncommon .skycollection-rarity-badge{border-color:#67bd7988;color:#a8f0b4}
+#skycollection-grid .skycollection-collectible.rarity-rare .skycollection-rarity-badge{border-color:#69a9ee88;color:#b9dcff}
+#skycollection-grid .skycollection-collectible.rarity-epic .skycollection-rarity-badge{border-color:#e6a04d88;color:#ffd19a}
+#skycollection-grid .skycollection-collectible.rarity-legendary .skycollection-rarity-badge{border-color:#e26b6888;color:#ffb3af}
+#skycollection-grid .skycollection-collectible .skycollection-rarity-badge{flex:none;padding:3px 5px;border:1px solid #b5c1c988;border-radius:3px;color:#e1e8eb;font:7px "DM Mono",monospace;letter-spacing:.05em}
+#skycollection-grid .skycollection-card-heading strong{flex:1;min-width:0}
+#skycollection-grid .skycollection-card-details{grid-template-columns:minmax(0,1fr) auto}
+#skycollection-grid .skycollection-card-details .skycollection-card-plugin{grid-column:1;grid-row:2}
+#skycollection-grid .skycollection-card-details .skycollection-formid{grid-column:2;grid-row:2}
+#skycollection-grid .skycollection-card-details .skycollection-found{position:static}
+@media(max-width:1050px){#skycollection .skycollection-workspace .skycollection-controls{grid-template-columns:minmax(0,1fr)}#skycollection .skycollection-filter-pickers{justify-content:flex-start}}
+@media(max-width:700px){.skycollection-sidebar{max-height:none;overflow:visible}.skycollection-sidebar .skycollection-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));overflow:visible}.skycollection-filter-group{min-width:0}.skycollection-filter-children{padding-left:8px}.skycollection-filter-pickers{display:grid;grid-template-columns:1fr;width:100%}#skycollection .skycollection-rarity-filter-wrap,#skycollection .skycollection-plugin-filter-wrap{width:100%;max-width:none}}
+
+/* Keep the collection catalog responsive while avoiding animated hover work. */
+#skycollection-grid .skycollection-collectible,
+.skycollection-item{transform:none!important;filter:none!important;transition:none!important}
+#skycollection-grid .skycollection-collectible{box-shadow:inset 0 1px #ffffff20,inset 0 -2px #090d1088}
+#skycollection-grid .skycollection-collectible.is-unique{box-shadow:inset 0 1px #fff2c52e,inset 0 -2px #090d1088}
+#skycollection-grid .skycollection-collectible .skycollection-item-art img{filter:none}
+.skycollection-item-art img{filter:none}
+#skycollection .skycollection-sidebar .skycollection-filters button,
+#skycollection .skycollection-sidebar .skycollection-filters button.active{transform:none;transition:none;box-shadow:inset 0 1px #ffffff18}
+#skycollection .skycollection-sidebar .skycollection-filters button.active{border-color:#73e4f4;background:linear-gradient(115deg,#234d59,#192c34 75%,#253941);color:#a6f3fb}
+#skycollection .skycollection-workspace .skycollection-controls{grid-template-columns:minmax(0,1fr) minmax(160px,230px)}
+#skycollection .skycollection-workspace .skycollection-search{width:100%;margin:0}
+#skycollection .skycollection-plugin-filter-wrap{width:clamp(160px,20vw,230px);min-width:0}
+#skycollection .skycollection-plugin-filter-wrap .skyrewrite-picker-trigger{transition:none}
+#skycollection .skycollection-plugin-filter-wrap .skyrewrite-picker-trigger[aria-expanded="true"]{box-shadow:none}
+@media(max-width:1050px){#skycollection .skycollection-workspace .skycollection-controls{grid-template-columns:minmax(0,1fr) minmax(160px,230px)}}
+@media(max-width:700px){#skycollection .skycollection-workspace .skycollection-controls{grid-template-columns:minmax(0,1fr)}#skycollection .skycollection-plugin-filter-wrap{width:100%}}
+
+/* Give full category labels room and balance the catalog search against its filters. */
+#skycollection .skycollection-layout{grid-template-columns:230px minmax(0,1fr);gap:14px}
+#skycollection .skycollection-sidebar .skycollection-filters button:not(.is-child){min-height:50px;height:auto;padding-top:7px;padding-bottom:7px}
+#skycollection .skycollection-sidebar .skycollection-filters button>span:nth-child(2){
+  min-width:0;overflow:visible;text-overflow:clip;white-space:normal;overflow-wrap:normal;word-break:normal;line-height:1.25
+}
+#skycollection .skycollection-sidebar .skycollection-filters button.is-child{min-height:38px;height:auto;padding-top:5px;padding-bottom:5px}
+#skycollection .skycollection-sidebar .skycollection-filters button.is-child>span:nth-child(2){white-space:normal;overflow-wrap:normal;word-break:normal;line-height:1.2}
+#skycollection .skycollection-workspace .skycollection-controls{grid-template-columns:minmax(220px,.82fr) minmax(330px,1.18fr)}
+#skycollection .skycollection-filter-pickers{display:flex;align-items:end;justify-content:flex-end;gap:8px;min-width:0}
+#skycollection .skycollection-rarity-filter-wrap{width:clamp(145px,15vw,190px);min-width:135px;flex:1 1 145px}
+
+@media(max-width:980px){#skycollection .skycollection-layout{grid-template-columns:215px minmax(0,1fr)}#skycollection .skycollection-workspace .skycollection-controls{grid-template-columns:minmax(180px,1fr) minmax(285px,1fr)}}
+@media(max-width:700px){#skycollection .skycollection-layout{grid-template-columns:minmax(0,1fr)}#skycollection .skycollection-sidebar .skycollection-filters button>span:nth-child(2){overflow-wrap:anywhere}}
+#skycollection .skycollection-plugin-filter-wrap{width:clamp(155px,17vw,210px);min-width:145px;flex:1 1 155px}
+@media(max-width:1050px){
+  #skycollection .skycollection-layout{grid-template-columns:215px minmax(0,1fr)}
+  #skycollection .skycollection-workspace .skycollection-controls{grid-template-columns:minmax(200px,.85fr) minmax(290px,1.15fr)}
+  #skycollection .skycollection-filter-pickers{flex-wrap:wrap}
+}
+@media(max-width:700px){
+  #skycollection .skycollection-layout{grid-template-columns:minmax(0,1fr)}
+  #skycollection .skycollection-workspace .skycollection-controls{grid-template-columns:minmax(0,1fr)}
+  #skycollection .skycollection-filter-pickers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));justify-content:stretch}
+  #skycollection .skycollection-rarity-filter-wrap,#skycollection .skycollection-plugin-filter-wrap{width:100%;min-width:0}
+}
+
+/* Collapsible category groups and first-visit location screenshot cards. */
+.skycollection-sidebar .skycollection-filters button:not(.is-child){grid-template-columns:36px minmax(0,1fr) 14px}
+.skycollection-expand-indicator{justify-self:center;color:#8de8f1;font-size:17px;line-height:1}
+.skycollection-sidebar .skycollection-filter-children[hidden]{display:none!important}
+.skycollection-sidebar .skycollection-filter-group:has(>.skycollection-filter-children:not([hidden]))>button[data-collection-group]{border-color:#67bfce88;background:linear-gradient(115deg,#263b43,#1c282e 72%,#26343b)}
+#skycollection-grid .skycollection-location-card .skycollection-location-art{display:grid;place-items:center;background:#11171d}
+#skycollection-grid .skycollection-location-card .skycollection-location-art img{width:100%;height:100%;padding:0;object-fit:contain;filter:none}
+#skycollection-grid .skycollection-location-card .skycollection-location-art small{position:static;color:#8da0a7;font:8px "DM Mono",monospace;letter-spacing:.08em}
+.skycounter-locations{display:grid;gap:9px}.skycounter-location-row{display:grid;grid-template-columns:120px minmax(0,1fr);align-items:center;gap:12px;padding:9px;border:1px solid #2b4650;border-radius:10px;background:linear-gradient(135deg,#14222a,#151b23)}.skycounter-location-art{width:120px;height:68px;display:grid;place-items:center;overflow:hidden;border:1px solid #39626c;border-radius:8px;background:#101820;color:#75d8df;font:8px "DM Mono",monospace;letter-spacing:.08em}.skycounter-location-art img{width:100%;height:100%;object-fit:cover}.skycounter-location-row>div:last-child{display:grid;gap:5px;min-width:0}.skycounter-location-row strong{color:#e4edf0;font-size:11px}.skycounter-location-row small{color:#8493a1;font-size:9px}
+
+/* SkyCollection-owned searchable picker controls. */
+.skycollection-picker{position:relative;display:grid;gap:6px;min-width:0}
+.skycollection-picker-label{color:#8493a1;font:9px "DM Mono",monospace;letter-spacing:.08em;text-transform:uppercase}
+.skycollection-picker-trigger{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;min-height:38px;padding:8px 11px;border:1px solid #344552;border-radius:7px;background:linear-gradient(135deg,#18232c,#101820);color:#dfe9ed;font:600 10px Manrope,sans-serif;text-align:left;cursor:pointer}
+.skycollection-picker-trigger:hover,.skycollection-picker-trigger[aria-expanded=true]{border-color:#55c7d0;box-shadow:0 0 0 2px #5dcdd722}
+.skycollection-picker-trigger i{color:#6bd1dc;font-style:normal;font-size:14px}
+.skycollection-picker-popover{position:absolute;z-index:30;top:100%;right:0;left:0;display:grid;gap:7px;max-height:280px;margin-top:6px;padding:8px;border:1px solid #3b6570;border-radius:9px;background:#111a21;box-shadow:0 12px 28px #0009}
+.skycollection-picker-popover[hidden]{display:none}
+.skycollection-picker-search{display:flex;align-items:center;gap:8px;padding:7px 9px;border:1px solid #344552;border-radius:6px;background:#0c141a;color:#75d8e1}
+.skycollection-picker-search input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:#e8f0f2;font:10px Manrope,sans-serif}
+.skycollection-picker-options{display:grid;gap:2px;max-height:205px;overflow:auto}
+.skycollection-picker-option{width:100%;padding:7px 9px;border:1px solid transparent;border-radius:5px;background:transparent;color:#bbc9ce;font:10px Manrope,sans-serif;text-align:left;cursor:pointer}
+.skycollection-picker-option:hover,.skycollection-picker-option.selected{border-color:#4b9da766;background:#16323a;color:#a8eef0}
+.skycollection-picker-empty{padding:9px;color:#82929b;font:9px "DM Mono",monospace;text-align:center}
+#skycounter.page{max-width:none;margin:0}
+.skycounter-dashboard-frame{display:block;width:100%;height:calc(100vh - 150px);min-height:520px;border:0;background:transparent}

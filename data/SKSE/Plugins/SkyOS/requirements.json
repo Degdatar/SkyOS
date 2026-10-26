@@ -1,0 +1,29 @@
+{
+  "requiredMods": [
+    {
+      "name": "PrismaUI",
+      "description": "Required to display the SkyOS interface."
+    }
+  ],
+  "optionalIntegrations": [
+    {
+      "name": "SkyNet",
+      "plugin": "SkyNetBrowser.dll",
+      "requiredExports": [
+        "SkyNet_SkyOS_Open",
+        "SkyNet_SkyOS_SetSplashEnabled"
+      ],
+      "description": "Optional browser handoff. SkyNet must include the SkyOS integration patch; SkyOS and its built-in document reader work without it."
+    }
+  ],
+  "optionalAppModules": [
+    { "name": "SkySearch", "plugin": "SkySearch.dll", "requiredCore": "SkyOS.dll", "package": "SkySearch" },
+    { "name": "SkyMonitor", "plugin": "SkyMonitor.dll", "requiredCore": "SkyOS.dll", "package": "SkyMonitor" },
+    { "name": "SkyRewrite", "plugin": "SkyRewrite.dll", "requiredCore": "SkyOS.dll", "package": "SkyRewrite" },
+    { "name": "SkyCollection", "plugin": "SkyCollection.dll", "requiredCore": "SkyOS.dll", "package": "SkyCollection", "requires": ["SkyCounterUI.dll"] },
+    { "name": "SkyCounter UI", "plugin": "SkyCounterUI.dll", "requiredCore": "SkyOS.dll", "package": "SkyCounterUI", "optionalIntegrations": ["SkyCollection.dll reads the item and location caches"] },
+    { "name": "SkyAchievements", "plugin": "SkyAchievements.dll", "requiredCore": "SkyOS.dll", "package": "SkyAchievements", "optionalDataSources": ["SkyRewrite.dll", "SkyCollection.dll"] },
+    { "name": "SkyMissions", "plugin": "SkyMissions.dll", "requiredCore": "SkyOS.dll", "package": "SkyMissions", "requires": ["SkyRewrite.dll"], "optionalDataSources": ["SkyCollection.dll"] }
+  ],
+  "coreModules": ["SkyDocuments", "SkyViewer"]
+}

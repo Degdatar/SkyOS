@@ -1,0 +1,10 @@
+{
+  "name": "SkyOS Core",
+  "plugin": "SkyOS.dll",
+  "required": true,
+  "coreModules": ["SkyDocuments", "SkyViewer"],
+  "optionalAppModules": ["SkySearch", "SkyMonitor", "SkyRewrite", "SkyCollection", "SkyCounterUI", "SkyAchievements", "SkyMissions"],
+  "documents": "Data/SKSE/Plugins/SkyOS/Mods/SkyOS/SkyDocuments",
+  "settingsStorage": "%LOCALAPPDATA%/SkyOS/SkyViewer/<ModuleId>/settings.json",
+  "description": "Required in-game shell, Home page, document reader, shared UI views, and app bridge."
+}

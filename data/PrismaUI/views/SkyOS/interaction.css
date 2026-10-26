@@ -1,0 +1,289 @@
+/* Keep settings descriptions on their own line and give labelled switches a fixed footprint. */
+.module-setting {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: stretch;
+  gap: 7px;
+}
+
+.module-setting-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  width: 100%;
+  min-width: 0;
+}
+
+.module-setting-main > span:first-child {
+  flex: 1 1 220px;
+  min-width: 0;
+  color: #e0e8ec;
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.module-setting > .setting-description {
+  display: block;
+  width: 100%;
+  margin: 0;
+  grid-column: auto;
+  flex: none;
+  line-height: 1.45;
+}
+
+.module-toggle {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  white-space: nowrap;
+}
+
+.module-toggle-label {
+  display: inline-block;
+  width: 25px;
+  color: #7e8a95;
+  text-align: center;
+  font: 700 9px/1 Manrope, 'Segoe UI', sans-serif;
+  letter-spacing: .08em;
+}
+
+.module-toggle[data-state="off"] .module-toggle-off {
+  color: #f0c77a;
+}
+
+.module-toggle[data-state="on"] .module-toggle-on {
+  color: #7ce5ec;
+}
+
+.module-setting .module-toggle input[type="checkbox"] {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  position: relative;
+  display: block;
+  flex: none;
+  box-sizing: border-box;
+  width: 42px !important;
+  min-width: 42px !important;
+  max-width: 42px !important;
+  height: 24px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 1px solid #58636e !important;
+  border-radius: 999px !important;
+  background: #27303a !important;
+  accent-color: transparent !important;
+  box-shadow: inset 0 1px #ffffff10 !important;
+  filter: none !important;
+  cursor: pointer;
+  transition: none !important;
+}
+
+.module-setting .module-toggle input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #aab4bf;
+  transform: none;
+  transition: none;
+}
+
+.module-setting .module-toggle input[type="checkbox"]:checked {
+  border-color: #69dce5 !important;
+  background: #174b52 !important;
+}
+
+.module-setting .module-toggle input[type="checkbox"]:checked::before {
+  background: #7ce5ec;
+  transform: translateX(18px);
+}
+
+.module-setting .module-toggle input[type="checkbox"]:focus-visible {
+  outline: 2px solid #f0c77a;
+  outline-offset: 3px;
+}
+
+@media (max-width: 560px) {
+  .module-setting-main {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+/* Instant hover feedback: a small border tint only, with no lift, glow, filter, or animation. */
+button,
+.tile,
+.skycollection-item,
+.module-tab,
+.document-mod,
+.document-tab,
+.app {
+  transition: none !important;
+}
+
+button:not(:disabled):hover,
+.module-tab:hover,
+.document-mod:hover,
+.document-tab:hover,
+.app:not(.disabled):hover {
+  border-color: #708b95 !important;
+}
+
+.skycollection-sidebar .skycollection-filters button:not(.active):hover {
+  border-color: #7599a4 !important;
+  color: #e2f1f3;
+}
+
+#skycollection-grid .skycollection-collectible:hover {
+  border-color: #b4c4cb !important;
+}
+
+.skycollection-item-art[role="button"] {
+  cursor: pointer;
+}
+
+.skycollection-item-art[role="button"]:hover {
+  border-color: #829ba5 !important;
+}
+
+.skycollection-card-subcategory {
+  grid-column: 1 / -1;
+  overflow: hidden;
+  color: #c7d3d8;
+  font: 8px "DM Mono", monospace;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.skycollection-preview-backdrop {
+  position: fixed;
+  z-index: 10000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #070b10dd;
+}
+
+.skycollection-preview {
+  display: grid;
+  grid-template-rows: auto minmax(180px, min(68vh, 720px)) auto;
+  gap: 14px;
+  width: min(760px, 92vw);
+  max-height: 90vh;
+  padding: 18px;
+  border: 1px solid #73848d;
+  border-radius: 8px;
+  background: #151c22;
+}
+
+.skycollection-preview > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.skycollection-preview h2 {
+  overflow: hidden;
+  margin: 0;
+  color: #e7edf0;
+  font-size: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.skycollection-preview-close {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #61717a;
+  border-radius: 4px;
+  color: #d5e1e5;
+  background: #202a31;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.skycollection-preview-art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid #53636c;
+  border-radius: 5px;
+  background: #0c1217;
+  color: #aab8bd;
+}
+
+.skycollection-preview-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.skycollection-preview-art img[hidden],
+.skycollection-preview-art span[hidden] {
+  display: none;
+}
+
+.skycollection-preview-arrow {
+  position: absolute;
+  top: 50%;
+  width: 42px;
+  height: 52px;
+  margin-top: -26px;
+  border: 1px solid #8799a1;
+  border-radius: 4px;
+  color: #e6edf0;
+  background: #111a20dd;
+  font-size: 34px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.skycollection-preview-arrow.previous { left: 12px; }
+.skycollection-preview-arrow.next { right: 12px; }
+.skycollection-preview-arrow[hidden] { display: none; }
+
+.skycollection-preview-count {
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+  padding: 4px 7px;
+  border: 1px solid #53636c;
+  border-radius: 3px;
+  color: #c1cdd1;
+  background: #0c1217dd;
+  font: 9px "DM Mono", monospace;
+}
+.skycollection-preview-count[hidden] { display: none; }
+
+.skycollection-preview-detail {
+  overflow: hidden;
+  margin: 0;
+  color: #95e5ec;
+  font: 10px "DM Mono", monospace;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+body.collection-preview-open { overflow: hidden; }
+body.collection-preview-open .skycollection-sidebar { overflow: hidden !important; scrollbar-width: none !important; }
+body.collection-preview-open .skycollection-sidebar::-webkit-scrollbar { display: none !important; width: 0 !important; height: 0 !important; }
+
+.skycollection-item-art:focus-visible {
+  outline: 2px solid #e1bb72;
+  outline-offset: 2px;
+}

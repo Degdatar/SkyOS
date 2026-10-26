@@ -1,0 +1,8 @@
+{
+  "name": "SkyOS Modder's Starter Kit",
+  "description": "Build internal SkyOS apps, native windows, SkyViewer modules, and complete Skyrim mod packages",
+  "icon": "⚒",
+  "accent": "#67c9d6",
+  "showInSkyApps": true,
+  "settings": []
+}

@@ -1,0 +1,5 @@
+[hidden]{display:none!important}
+.skycounter-hero{position:relative;isolation:isolate;overflow:hidden}
+.skycounter-hero:before{position:absolute;z-index:-2;inset:0;content:"";background:linear-gradient(90deg,#0b141ce8,#0d1a22b8 65%,#1018204d),url("../SkyCounterUI/skycounterui-banner.png") center/cover}
+.skycounter-hero>.skycollection-banner-art{display:none}
+.skycounter-hero>*{position:relative}

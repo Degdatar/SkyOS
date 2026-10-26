@@ -1,0 +1,40 @@
+{
+  "name": "Your Mod Name",
+  "description": "Configure Your Mod from SkyViewer",
+  "icon": "✦",
+  "accent": "#dcad66",
+  "requiredCore": "SkyOS.dll",
+  "showInSkyApps": true,
+  "settings": [
+    {
+      "id": "enabled",
+      "label": "Enable feature",
+      "type": "boolean",
+      "default": true,
+      "description": "Turn the example feature on or off."
+    },
+    {
+      "id": "strength",
+      "label": "Feature strength",
+      "type": "number",
+      "default": 1,
+      "min": 0,
+      "max": 5,
+      "step": 0.1,
+      "description": "Example bounded numeric setting."
+    },
+    {
+      "id": "mode",
+      "label": "Behavior",
+      "type": "select",
+      "default": "Balanced",
+      "options": ["Quiet", "Balanced", "Fast"]
+    },
+    {
+      "id": "displayName",
+      "label": "Display name",
+      "type": "text",
+      "default": "My Mod"
+    }
+  ]
+}

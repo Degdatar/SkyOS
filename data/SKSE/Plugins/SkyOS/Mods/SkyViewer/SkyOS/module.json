@@ -1,0 +1,15 @@
+{
+  "name": "SkyOS",
+  "description": "Dwemer workstation controls",
+  "icon": "✦",
+  "accent": "#dcad66",
+  "settings": [
+    { "id": "openHotkey", "label": "Open or hide SkyOS", "type": "hotkey", "default": "F11" },
+    { "id": "closeHotkey", "label": "Close SkyOS", "type": "hotkey", "default": "Escape" },
+    { "id": "documentsHotkey", "label": "Open SkyDocuments", "type": "hotkey", "default": "", "description": "Open the built-in document library." },
+    { "id": "skyViewerHotkey", "label": "Open SkyViewer", "type": "hotkey", "default": "", "description": "Open the module browser and settings." },
+    { "id": "showLaunchSplash", "label": "Show SkyOS launch splash screen", "type": "boolean", "default": true, "description": "Play the full-screen SkyOS intro the first time you open SkyOS in each game session." },
+    { "id": "showSplash", "label": "Show SkyNet launch splash screen", "type": "boolean", "default": false, "requiresSkyNet": true },
+    { "id": "useBuiltInDocumentReader", "label": "Open documents in SkyOS", "type": "boolean", "default": false, "description": "Open PDFs, webpages, and text documents in SkyOS's built-in reader instead of SkyNet.", "requiresSkyNet": true }
+  ]
+}
