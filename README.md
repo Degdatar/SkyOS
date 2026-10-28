@@ -1,61 +1,68 @@
 # SkyOS
 
-SkyOS is an in-game desktop for Skyrim Special Edition and Anniversary Edition. `SkyOS.dll` provides the shared SKSE/PrismaUI shell, Home page, SkyViewer, and SkyDocuments. The Home page keeps every first-party app shortcut visible: installed apps open in SkyOS, while a missing app reports its name and that it is not installed.
+SkyOS is the shared in-game desktop for Skyrim Special Edition and Anniversary Edition. This repository contains the SkyOS Core source, its built-in **SkyViewer** and **SkyDocuments** features, the PDF reader, and the optional **SkyOS Modder Starter Kit**.
 
-## Included in this repository
+## Scope
 
-- SkyOS Core, built-in SkyViewer, and SkyDocuments sources and resources.
-- The bundled PDF.js viewer under `data/PrismaUI/views/SkyOS/pdfjs/` and the pinned PDFium download and install rules in `CMakeLists.txt`.
-- The Modder Starter Kit under `data/SkyOSModderStarterKit/`, including the internal-app and native-app templates.
-- The SkyOS API Header, README, and guide under `data/SkyOSAPIHeader/`; the Starter Kit also includes the header in its native-app template.
-- The native sources and data for the first-party app plugins linked by the core project.
+The other SkyOS apps remain separate projects. This repository contains only their bridge declarations under `include/bridges/`; it does not include their plugin implementations, app pages, artwork, or docs. SkyOS Core connects to those independently installed modules at runtime.
 
-## Core and optional apps
+The Starter Kit and the SkyOS API Header are included here. The kit has internal-app and native-app templates, a sample plugin, packaging guidance, and the `SkyOSAPI.h` native launch contract.
 
-SkyDocuments and SkyViewer are included in **SkyOS Core**. The following apps are separately selectable packages, each with its own SKSE plugin DLL, SkyViewer module, SkyDocuments, and app data:
+## Features
 
-| App package | Plugin DLL | Additional dependency |
-| --- | --- | --- |
-| SkySearch | `SkySearch.dll` | SkyOS Core |
-| SkyMonitor | `SkyMonitor.dll` | SkyOS Core |
-| SkyRewrite | `SkyRewrite.dll` | SkyOS Core |
-| SkyCollection | `SkyCollection.dll` | SkyOS Core |
-| SkyCounter UI | `SkyCounterUI.dll` | SkyOS Core; SkyCollection supplies pickup and location events |
-| SkyAchievements | `SkyAchievements.dll` | SkyOS Core; SkyRewrite and SkyCollection provide optional history data |
-
-Every app package requires `SkyOS.dll`. Install SkyOS Core and any combination of app packages as separate mods in the same MO2/Vortex profile. SkyNet is an optional browser integration; it is not required by SkyOS or its built-in reader. PrismaUI is required for the in-game interface.
-
-Each app package keeps its own files under `Data/SKSE/Plugins/SkyOS/Mods/<App>/` and `Data/SKSE/Plugins/SkyOS/Mods/SkyViewer/<App>/`. Module preferences are separate under `%LOCALAPPDATA%/SkyOS/SkyViewer/<ModuleId>/`. Each app's guide describes its other saved data, such as save-specific SkyCollection discoveries and SkyRewrite journal records. See `data/SKSE/Plugins/SkyOS/Mods/<App>/SkyDocuments/` for the app's Features, Changelog, Requirements, settings, and data details.
-
-## PDF reader
-
-SkyDocuments uses the PDFium DLL bundled in SkyOS Core to rasterize each PDF page as a complete image. This preserves the page layout, text, fonts, vector artwork, and image masks without repositioning extracted text. Source PDFs are rendered locally and are not uploaded.
-
-## SkyViewer video banners
-
-Each SkyViewer module may specify a video filename in its **Header video** setting and store that file in its own `Files/` folder. MP4 and WebM are supported, up to 24 MiB. SkyViewer does not reveal a video unless its metadata confirms a duration greater than zero and no more than 10 seconds. Longer, invalid, or unknown-duration videos are discarded. Playback is always muted and its volume remains zero.
+- Shared SKSE and PrismaUI desktop shell, app discovery, and native-app launch bridge.
+- Built-in SkyViewer for browsing SkyOS app modules and their settings.
+- Built-in SkyDocuments library for HTML and text documents.
+- Built-in PDF reader: PDFium renders document pages in the native plugin; the source PDF remains local.
+- Optional bridges to SkySearch, SkyMonitor, SkyRewrite, SkyCollection, SkyCounter UI, SkyAchievements, and SkyMissions.
+- Optional SkyNet browser integration through its SkyOS compatibility exports.
 
 ## Requirements
 
-- Skyrim Special Edition or Anniversary Edition with a matching SKSE build.
-- PrismaUI compatible with the installed game runtime.
-- For compiling: Visual Studio 2022, CMake 3.24 or newer, vcpkg with `VCPKG_ROOT` set, and network access during the first configure for the pinned PDFium package and CommonLibSSE-NG dependency.
+- Windows x64, Skyrim Special Edition or Anniversary Edition, a matching SKSE build, and PrismaUI.
+- Visual Studio 2022 with the C++ desktop workload, CMake 3.24 or newer, Git, and vcpkg with `VCPKG_ROOT` set.
+- The `x64-windows-static-md` vcpkg triplet.
+- The seven separately built app import libraries: `SkySearch.lib`, `SkyMonitor.lib`, `SkyRewrite.lib`, `SkyCollection.lib`, `SkyCounterUI.lib`, `SkyAchievements.lib`, and `SkyMissions.lib`.
+- Network access on the first configure to fetch CommonLibSSE-NG and the pinned PDFium NuGet package.
 
-The plugin targets Skyrim SE/AE and use the project's existing CommonLibSSE-NG configuration. Skyrim VR is not a target.
+The separate app projects produce their import libraries when built. Place all seven `.lib` files in one directory, or set `SKYOS_APP_IMPORT_LIB_DIR` to the directory that contains them. The app DLLs themselves are delivered by their own projects and are loaded separately at runtime.
 
-## Build separate install packages
+## Configure and build
 
-Run these commands from the SkyOS source directory in PowerShell. CPack emits each install component as its own ZIP.
+From this repository directory, configure with the directory containing the app import libraries:
 
 ```powershell
-cmake --preset release
+cmake --preset release -DSKYOS_APP_IMPORT_LIB_DIR="D:/path/to/app-import-libraries"
 cmake --build --preset release --parallel
-cmake --build --preset release --target SkyOSStarterKitExample --parallel
+```
+
+To build the sample native app plugin included in the Starter Kit:
+
+```powershell
+cmake --build build --config Release --target SkyOSStarterKitExample --parallel
+```
+
+Create the separate SkyOS Core and Starter Kit ZIP packages with:
+
+```powershell
 cpack --config build/CPackConfig.cmake -G ZIP -C Release
 ```
 
-CPack writes separate component archives in `build/`. Install the **SkyOS Core** archive and then only the app archives you want. The **SkyOS Modder Starter Kit** archive is optional. Its native example DLL is excluded from the normal all-target build, so the third command builds it before packaging.
+The Core package installs SkyOS, SkyViewer, SkyDocuments, its PDFium runtime, and core metadata under Skyrim's `Data` directory. The separate Starter Kit package includes the templates, guides, API header, and sample plugin.
 
-## Modder Starter Kit
+## Repository layout
 
-The optional kit is installed beneath `Data/SKSE/Plugins/SkyOS/Mods/SkyViewer/SkyOSStarterKit/`. It includes an internal HTML app template, a native app example, a SkyViewer module template, packaging guidance for app DLLs and data, and detailed instructions for distributing mod documentation and Skyrim content. SkyOS Core is required by all in-game apps/modules. See the kit's `README.md`, `MODDER_GUIDE.md`, and `FIRST_PARTY_APP_PACKAGING.md` for the full reference.
+```text
+src/                                                        SkyOS Core, document reader, viewer, and native-app bridge sources
+include/PrismaUI_API.h                                      PrismaUI interface header used by the core
+include/bridges/                                            Header-only interfaces for separately released SkyOS apps
+data/PrismaUI/views/SkyOS/                                  SkyOS shell, SkyViewer, and SkyDocuments UI
+data/SKSE/Plugins/SkyOS/Mods/SkyViewer/SkyOS/               Built-in SkyViewer module metadata and settings page
+data/SKSE/Plugins/SkyOS/Mods/SkyViewer/SkyDocuments/        SkyViewer documentation
+data/SkyOSModderStarterKit/                                 Internal/native templates, sample registration, and guides
+data/SkyOSAPIHeader/                                        Native app launch API header and guide
+```
+
+## SkyOS API Header
+
+The public header and guide are in `data/SkyOSAPIHeader/`. The Starter Kit also includes `SkyOSAPI.h` in its native-app template. Native apps export `SkyOS_App_Launch` from an already-loaded SKSE plugin; internal apps use SkyOS's iframe bridge and do not need a native DLL.
