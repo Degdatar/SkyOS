@@ -17,7 +17,7 @@ The Starter Kit and the SkyOS API Header are included here. The kit has internal
 - Optional bridges to SkySearch, SkyMonitor, SkyRewrite, SkyCollection, SkyCounter UI, SkyAchievements, and SkyMissions.
 - Optional SkyNet browser integration through its SkyOS compatibility exports.
 
-## Requirements
+## Requirements for developers 
 
 - Windows x64, Skyrim Special Edition or Anniversary Edition, a matching SKSE build, and PrismaUI.
 - Visual Studio 2022 with the C++ desktop workload, CMake 3.24 or newer, Git, and vcpkg with `VCPKG_ROOT` set.
